@@ -1,0 +1,93 @@
+﻿SOFTWARE DEVELOPMENT PROPOSAL  
+ADAMA SCIENCE      AND TECHNOLOGY UNIVERSITY
+SCHOOL OF ELECTRICAL ENGINEERING AND   COMPUTING
+DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING
+COURSE_NAME: INFORMATION RETRIEVAL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PREPARED as semester project for IR course
+Section:-3
+                                                          
+PREPARED BY                                                                    NAME                                           ID              Abdi      Dawud—-------------------- UGR/25390/14
+
+
+
+
+
+EXECUTIVE SUMMARY  
+
+
+ In This  project I aim to develop a simple yet effective information retrieval (IR) system as implementation of  what I have gained in this semester  by   using Python and Flask. The primary objective is to index a set of documents, process search queries, and return relevant documents based on the TF-IDF (Term Frequency-Inverse Document Frequency) scoring algorithm. This system is best specially  for retrieving specific information from large text corpora efficiently.
+
+
+The Components
+
+
+1.Text Preprocessing:
+   - Function: `preprocess_text`
+   - Purpose: Convert raw text into a clean, tokenized form by lowercasing, removing stop words, and stemming.
+   - Process: Tokenizes the text, converts tokens to lowercase, removes non-alphabetic tokens and stop words, and stems the remaining tokens to their root form.
+
+
+2. Index Construction:
+   - Functions: `add_to_index`, `indexdoc`
+   - Purpose: Build an inverted index for efficient document retrieval.
+   - Process: Terms from each document are counted and added to the inverted index along with their document IDs and frequencies. `indexdoc` processes all documents in a specified directory, preprocesses their content, and adds them to the index.
+
+
+3.Data Persistence:
+   - Functions: `save_index_to_file`, `load_index_from_file`
+   - Purpose: Save and load the inverted index and document metadata to/from files.
+   - Process: Uses JSON format to store and retrieve the inverted index and document metadata, ensuring the index can be reused without reprocessing the documents.
+
+
+4. TF-IDF Scoring:
+   - Function: `compute_tfidf`
+   - Purpose: Calculate the relevance of a term in a document.
+   - Process: Combines term frequency (TF) and inverse document frequency (IDF) to assign a score to each term in a document, indicating its importance.
+
+
+5. Query Processing and Search:
+   - Functions: `search_query`, `get_snippet`
+   - Purpose: Process search queries and retrieve relevant documents.
+   - Process: Preprocesses the query, computes TF-IDF scores for query terms, ranks documents based on these scores, and extracts snippets from documents that contain query terms.
+
+
+6. Flask Web Application:
+   - Functions: `home`, `search`
+   - Purpose: Provide a user interface for searching and displaying results.
+   - Process: Renders a search form (`index.html`) and processes user queries to display search results (`results.html`).
+
+
+ Workflow
+
+
+1. Indexing:
+   - Text documents are read from a specified directory.
+   - The content is preprocessed, and terms are added to an inverted index.
+   - The inverted index and document metadata are saved for later use.
+
+
+2. Searching:
+   - Users submit search queries via a web form.
+   - The query is preprocessed, and relevant documents are identified using the inverted index and TF-IDF scores.
+   - Snippets containing the query terms are extracted from the documents and displayed to the user, ranked by relevance.
+
+
+Conclusion
+This IR system effectively demonstrates the core principles of information retrieval using TF-IDF for scoring and Flask for web-based interaction. It provides a practical solution for searching large text corpora, offering quick and relevant results. The modular design, with separate components for indexing, scoring, and web interfacing, ensures the system is both scalable and maintainable. Future enhancements could include support for more complex queries, additional ranking algorithms, and user interface
+THANK YOU
